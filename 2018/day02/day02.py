@@ -1,6 +1,9 @@
 # Input
-input_list = open('input.txt')
-formatted_list = [line.rstrip() for line in input_list]
+import os
+input_path = os.path.join(os.path.dirname(__file__), 'input.txt')
+
+with open(input_path) as input_list:
+    formatted_list = [line.rstrip() for line in input_list]
 
 
 def count_chars(string):
