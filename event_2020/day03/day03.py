@@ -18,5 +18,5 @@ def count_trees(right, down):
 
 slopes = [(3, 1), (1, 1), (5, 1), (7, 1), (1, 2)]
 
-print(f"Part 1: {count_trees(*slopes[0])}")
-print(f"Part 2: {prod([count_trees(r,d) for r,d in slopes])}")
+part1 = count_trees(*slopes[0])
+part2 = prod([count_trees(r, d) for r, d in slopes])

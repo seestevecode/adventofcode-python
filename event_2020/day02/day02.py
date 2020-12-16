@@ -29,5 +29,5 @@ def count_passed(check_func):
     return len(checked_true)
 
 
-print("Part 1: ", count_passed(check_part1))
-print("Part 2: ", count_passed(check_part2))
+part1 = count_passed(check_part1)
+part2 = count_passed(check_part2)
