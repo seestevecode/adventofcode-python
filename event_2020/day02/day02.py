@@ -5,6 +5,7 @@ with open(input_path) as input_list:
     formatted_list = [line.strip() for line in input_list]
 
 
+# E.g. 17-19 c: ccccccccccfrcctcccjc
 def parse_row(row_string):
     [nums, char, string] = row_string.split(' ')
     [fst_num, snd_num] = map(int, nums.split('-'))
@@ -19,14 +20,14 @@ def check_part1(row_string):
 
 def check_part2(row_string):
     [fst_pos, snd_pos, char, string] = parse_row(row_string)
-    return (string[fst_pos-1] == char) ^ (string[snd_pos-1] == char)
+    return (string[fst_pos - 1] == char) ^ (string[snd_pos - 1] == char)
 
 
 def count_passed(check_func):
-    checked = [ check_func(row) for row in formatted_list  ]
-    checked_true = [ b for b in checked if b == True  ]
+    checked = [check_func(row) for row in formatted_list]
+    checked_true = [b for b in checked if b == True]
     return len(checked_true)
 
 
-print(f"Part 1: {count_passed(check_part1)}")
-print(f"Part 2: {count_passed(check_part2)}")
+print("Part 1: ", count_passed(check_part1))
+print("Part 2: ", count_passed(check_part2))
